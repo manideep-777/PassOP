@@ -1,0 +1,19 @@
+.main{
+    background-color: rgb(206, 235, 206);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.inp-bor{
+    border:2px solid rgb(95, 189, 95) !important ;
+}
+
+.data-box{
+    width: 100vw;
+    min-height: 44vh;
+}
+
+.data{
+    border: 2px solid black;
+}
