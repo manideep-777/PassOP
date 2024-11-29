@@ -22,3 +22,24 @@
 .data {
   border: 2px solid black;
 }
+
+.data-box {
+  max-height: 400px; /* Limit the height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Avoid horizontal scrolling */
+  padding-right: 8px; /* Ensure space for the scrollbar */
+}
+
+/* Add custom scrollbar styling for better appearance */
+.data-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.data-box::-webkit-scrollbar-thumb {
+  background: #28a745; /* Match success color */
+  border-radius: 4px;
+}
+
+.data-box::-webkit-scrollbar-thumb:hover {
+  background: #218838;
+}
