@@ -1,19 +1,24 @@
-.main{
-    background-color: rgb(206, 235, 206);
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.inp-bor{
-    border:2px solid rgb(95, 189, 95) !important ;
+.main {
+  background-color: rgb(206, 235, 206);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
-.data-box{
-    width: 100vw;
-    min-height: 44vh;
+.inp-bor {
+  border: 2px solid rgb(95, 189, 95) !important ;
 }
 
-.data{
-    border: 2px solid black;
+.data-box {
+  width: 100vw;
+  min-height: 4vh;
+}
+
+.data {
+  border: 2px solid black;
 }
