@@ -1,19 +1,45 @@
-.main{
-    background-color: rgb(206, 235, 206);
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.inp-bor{
-    border:2px solid rgb(95, 189, 95) !important ;
+.main {
+  background-color: rgb(206, 235, 206);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
-.data-box{
-    width: 100vw;
-    min-height: 44vh;
+.inp-bor {
+  border: 2px solid rgb(95, 189, 95) !important ;
 }
 
-.data{
-    border: 2px solid black;
+.data-box {
+  width: 100vw;
+  min-height: 4vh;
+}
+
+.data {
+  border: 2px solid black;
+}
+
+.data-box {
+  max-height: 400px; /* Limit the height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Avoid horizontal scrolling */
+  padding-right: 8px; /* Ensure space for the scrollbar */
+}
+
+/* Add custom scrollbar styling for better appearance */
+.data-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.data-box::-webkit-scrollbar-thumb {
+  background: #28a745; /* Match success color */
+  border-radius: 4px;
+}
+
+.data-box::-webkit-scrollbar-thumb:hover {
+  background: #218838;
 }

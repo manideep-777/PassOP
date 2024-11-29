@@ -1,52 +1,86 @@
-{% extends "index.html" %}
-{% block main %}
+{% extends "index.html" %} {% block main %}
 
 <div class="main">
-    <div class="d-flex flex-column align-items-center">
-        <div class="mt-5">
-            <p><b><span class="text-success fs-1">
-                        <</span><span class="fs-1">Pass</span><span class="text-success fs-1">OP/></span></b></p>
-        </div>
-        <div class="mb-1">
-            Your Own Password Manager
-        </div>
+  <div class="d-flex flex-column align-items-center">
+    <div class="mt-5">
+      <p>
+        <b
+          ><span class="text-success fs-1"> <</span
+          ><span class="fs-1">Pass</span
+          ><span class="text-success fs-1">OP/></span></b
+        >
+      </p>
     </div>
-    <div class="container">
-        <form action="/add_user" method="post">
-            <div class="row mb-2">
-                <input type="text" placeholder="Enter website URL" class="col-12 rounded-pill p-1 inp-bor mx-1 mx-md-0"
-                    name="url">
-            </div>
-            <div class="row">
-                <input type="text" placeholder="Enter Username"
-                    class="col-md-7 col-12 rounded-pill p-1 inp-bor mb-1 mx-1 mx-md-0" name="username">
-                <input type="text" placeholder="Enter Password"
-                    class="col-md-5 col-12 rounded-pill p-1 inp-bor mx-1 mx-md-0" name="password">
-            </div>
-            <div class="row">
-                <button type="submit"
-                    class="btn bg-success border-success-subtle text-light rounded-pill col-md-1 col-2  mt-2 p-1 mx-auto mb-3">Save</button>
-            </div>
-        </form>
-    </div>
+    <div class="mb-1">Your Own Password Manager</div>
+  </div>
 
+  <div class="container">
+    <form action="/add_user" method="post" class="mx-2">
+      <div class="row mb-2">
+        <input
+          type="text"
+          placeholder="Enter website URL"
+          class="col-12 rounded-pill p-1 inp-bor mx-1 mx-md-0"
+          name="url"
+        />
+      </div>
+      <div class="row">
+        <input
+          type="text"
+          placeholder="Enter Username"
+          class="col-md-7 col-12 rounded-pill p-1 inp-bor mb-1 mx-1 mx-md-0"
+          name="username"
+        />
+        <input
+          type="text"
+          placeholder="Enter Password"
+          class="col-md-5 col-12 rounded-pill p-1 inp-bor mx-1 mx-md-0"
+          name="password"
+        />
+      </div>
+      <div class="row">
+        <button
+          type="submit"
+          class="btn bg-success border-success-subtle text-light rounded-pill col-md-1 col-2 mt-2 p-1 mx-auto mb-3"
+        >
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
 
-    <div class="container bg-success data-box rounded text-light">
-        <div class="row">
-
-            {% for user in users %}
-            <div class="d-flex flex-column col-12 col-md-3 col-lg-4 data m-2 p-2">
-                <div>username: {{ user.username }}</div>
-                <div>pasword: {{ user.password }}</div>
-                <div>url: {{ user.url }}</div>
-                <div class="d-flex">
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </div>
-            </div>
-            {% endfor %}
+  <div
+    class="container bg-success data-box rounded text-light mt-2 min-h-content h-sm-400px"
+    style="overflow-y: auto"
+  >
+    <div class="row p-2">
+      {% for user in users %}
+      <div class="col-12 col-md-6 col-lg-3 p-0">
+        <div
+          class="d-flex flex-column data mb-2 mx-md-1 mx-lg-1 p-2 bg-light text-dark rounded"
+        >
+          <div><strong>Username:</strong> {{ user.username }}</div>
+          <div><strong>Password:</strong> {{ user.password }}</div>
+          <div class="text-truncate" style="word-wrap: break-word">
+            <strong>URL:</strong> {{ user.url }}
+          </div>
+          <div class="d-flex mt-2">
+            <button
+              class="btn bg-primary text-light rounded-pill mx-1 py-0 px-2 border-primary-subtle"
+            >
+              Edit
+            </button>
+            <button
+              class="btn bg-danger text-light rounded-pill mx-1 py-0 px-2 border-danger-subtle"
+            >
+              Delete
+            </button>
+          </div>
         </div>
+      </div>
+      {% endfor %}
     </div>
+  </div>
 </div>
 
 {% endblock %}
